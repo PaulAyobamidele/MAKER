@@ -1,0 +1,14 @@
+# OpenAI client library
+openai>=1.0.0
+
+# TQDM for progress bars
+tqdm>=4.65.0
+
+# Git filter-repo may be used for secret removal (optional, if used via script)
+git-filter-repo>=2.38.0
+
+# Standard utilities (these come with Python, listed for clarity)
+# ast, re, time, json, collections, typing
+
+# Optional: if using any HTTP requests outside OpenAI
+requests>=2.31.0
