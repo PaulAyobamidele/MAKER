@@ -1,6 +1,6 @@
-
 import time
 import openai
+from maker.gui_pygame import TowerOfHanoiPygame  # Correct class name
 
 from maker.config import (
     OPENAI_API_KEY,
@@ -13,24 +13,17 @@ from maker.config import (
     MAX_TOKENS
 )
 
-
 from maker.prompts import SYSTEM_PROMPT, get_user_template
-
-
 from maker.solver import generate_solution, verify_solution
-
 
 def main():
     if not OPENAI_API_KEY:
         print("ERROR: Please set OPENAI_API_KEY in maker/config.py")
-        return
+        return None, None
 
     client = openai.OpenAI(api_key=OPENAI_API_KEY)
-
     initial_state = [list(range(NUM_DISKS, 0, -1)), [], []]
-
     num_steps = 2**NUM_DISKS - 1
-
     user_template = get_user_template(NUM_DISKS)
 
     print("=" * 70)
@@ -46,7 +39,6 @@ def main():
     print("=" * 70)
 
     start = time.time()
-
     actions = generate_solution(
         client,
         initial_state,
@@ -56,19 +48,21 @@ def main():
         SYSTEM_PROMPT,
         user_template
     )
-
     elapsed = time.time() - start
     print(f"\nCompleted in {elapsed:.1f} seconds ({elapsed/60:.1f} min)")
 
     success = verify_solution(actions, NUM_DISKS)
-
     if success:
-        print("\n SUCCESS! My solution is Works. Glory!!!!!!!!!!, I mean of course all credit to the humans who designed MAKER.")
+        print("\n SUCCESS! Solution verified Yaaaaaayyyyyyy!!!!!! Gloraaaaaayyyyy!!!!!!. Of course thanks to MAKER's creators.")
     else:
         print("\n Solution contains errors.")
 
     return actions, success
 
-
 if __name__ == "__main__":
+    # Generate actions
     actions, success = main()
+
+    # Launch GUI only if actions were generated successfully
+    if actions:
+        TowerOfHanoiPygame(actions, NUM_DISKS)  # Corrected class name

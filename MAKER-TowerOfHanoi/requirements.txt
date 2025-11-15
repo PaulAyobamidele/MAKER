@@ -12,3 +12,4 @@ git-filter-repo>=2.38.0
 
 # Optional: if using any HTTP requests outside OpenAI
 requests>=2.31.0
+tk

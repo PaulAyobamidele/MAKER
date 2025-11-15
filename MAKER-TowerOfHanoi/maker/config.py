@@ -10,8 +10,8 @@ MODEL = "gpt-4.1"
 TEMPERATURE_FIRST = 0    
 TEMPERATURE_REST = 0.1        
 MAX_TOKENS = 750
-NUM_DISKS = 3                  
-K_THRESHOLD = 3                
+NUM_DISKS = 4                 
+K_THRESHOLD = 2              
 USE_RED_FLAGGING = True       
 
 
