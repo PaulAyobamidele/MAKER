@@ -17,7 +17,7 @@ def get_vote(client, current_state: List[List[int]], prev_move: List[int],
     while attempt < max_attempts:
         attempt += 1
         try:
-            # Format previous move to help LLM understand
+
             if prev_move is None or prev_move == [0, 0, 0]:
                 prev_move_str = "None (this is the first move)"
             else:
@@ -27,7 +27,7 @@ def get_vote(client, current_state: List[List[int]], prev_move: List[int],
                 else:
                     prev_move_str = f"{prev_move} (disk {disk} was moved, NOT disk 1)"
             
-            # Call the LLM
+
             response = client.chat.completions.create(
                 model=MODEL,
                 messages=[

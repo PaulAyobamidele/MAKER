@@ -28,6 +28,7 @@ Requirements:
 # USER TEMPLATES (for even/odd disk rotation rules)
 # ======================================================================
 
+
 ODD_TEMPLATE = """Rules:
 - Only one disk can be moved at a time.
 - Only the top disk can be moved.
@@ -38,7 +39,7 @@ ODD_TEMPLATE = """Rules:
 
 Movement rule:
 - If the previous move DID NOT involve disk 1, move disk 1 counter-clockwise.
-- Else (if disk 1 was moved previously), make the only legal move that is NOT disk 1.
+- Else (if disk 1 was moved previously), move the smallest legal disk that is NOT disk 1.
 
 Previous move: {previous_move}
 Current state: {current_state}
@@ -59,7 +60,7 @@ EVEN_TEMPLATE = """Rules:
 
 Movement rule:
 - If the previous move DID NOT involve disk 1, move disk 1 clockwise.
-- Else (if disk 1 was moved previously), make the only legal move that is NOT disk 1.
+- Else (if disk 1 was moved previously), move the smallest legal disk that is NOT disk 1.
 
 Previous move: {previous_move}
 Current state: {current_state}
