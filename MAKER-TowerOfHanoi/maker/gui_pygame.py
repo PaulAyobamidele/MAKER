@@ -16,13 +16,13 @@ class TowerOfHanoiPygame:
 
         pygame.init()
         self.width = 600
-        self.height = 450  # Increased for countdown text
+        self.height = 450  
         self.screen = pygame.display.set_mode((self.width, self.height))
         pygame.display.set_caption("Tower of Hanoi - MAKER Visualizer")
         self.clock = pygame.time.Clock()
         
         self.peg_x = [self.width // 6, self.width // 2, 5 * self.width // 6]
-        self.peg_y_bottom = self.height - 80  # Adjusted for countdown text
+        self.peg_y_bottom = self.height - 80  
         self.disk_height = 20
         self.disk_width_factor = 20
 
@@ -129,9 +129,6 @@ class TowerOfHanoiPygame:
         sys.exit()
 
 
-# -----------------------------
-# Example Usage
-# -----------------------------
 if __name__ == "__main__":
     example_actions = [
         [1, 0, 2],
