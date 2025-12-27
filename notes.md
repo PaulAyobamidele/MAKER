@@ -153,3 +153,113 @@ Recall the “ridiculous” Tower of Hanoi example.
 
 Solving Hanoi with **20 disks** requires:
 
+2^20 − 1 = 1,048,575 steps
+
+
+For a single LLM, this is a guaranteed failure.
+
+Not because the model is weak—but because the task is *long*.
+
+This makes Hanoi a **high-stress proxy** for real-world reasoning systems.
+
+---
+
+## MAKER’s Core Ideas
+
+### 1. Extreme Decomposition  
+*(Maximal Agentic Decomposition)*
+
+- Break tasks into the smallest possible units
+- Each step becomes a **micro-task**
+- No agent reasons globally
+- Each agent focuses on one trivial decision
+
+**Goal:**  
+Keep every step within the model’s high-confidence regime (~99%).
+
+---
+
+### 2. Error Correction via Voting  
+*(First-to-Ahead-by-K)*
+
+For every step:
+- Query **multiple independent agents**
+- Collect candidate answers
+- Tally votes
+
+But do **not** accept a simple majority.
+
+Instead:
+- Wait until one option is **K votes ahead**
+
+This is:
+- Statistics
+- Redundancy
+- The wisdom of crowds
+
+---
+
+### 3. Red-Flagging (Adversarial Checking)
+
+Before a step is accepted:
+- A specialized agent intervenes
+- Its sole role is to **find reasons the step might fail**
+
+If it detects inconsistency:
+- The step is rejected
+- Re-sampled
+
+This is the final safety gate.
+
+---
+
+## Why This Works
+
+With just **5 independent agents**:
+- Error probability per step drops from  
+  **1 in 100 → ~1 in 100,000**
+
+Across **one million steps**:
+- A single super-model collapses early
+- MAKER continues:
+  - Self-correcting
+  - Detecting errors
+  - Recovering from failures
+
+---
+
+## The Bigger Picture: Smarter Systems, Not Smarter Models
+
+MAKER is not about building:
+- Bigger models
+- Longer chains of thought
+
+It is about engineering **systems** that:
+- Decentralize control
+- Preserve independence
+- Aggregate decisions
+- Enable emergence
+- Correct errors continuously
+
+This mirrors how:
+- Biological intelligence works
+- Human institutions succeed
+- Safety-critical systems are built
+
+---
+
+## Final Takeaway
+
+Big Tech is currently betting on **super-models** that “think longer.”
+
+But if the per-step error rate remains non-zero, longer thinking only delays failure.
+
+**MAKER demonstrates an orthogonal truth:**
+
+> The future of reliable AI lies not in smarter individuals,  
+> but in smarter collectives.
+
+We are finally engineering intelligence the way nature always has—  
+**collectively.**
+
+---
